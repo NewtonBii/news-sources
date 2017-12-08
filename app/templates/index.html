@@ -1,24 +1,22 @@
 {% extends 'base.html'%}
 
-  <head>
-    <meta charset="utf-8">
-    <title>NEWS HIGHLIGHTS</title>
-  </head>
-  <body>
-    <h1>News Highlights</h1>
+{% block content %}
+    <h1>{{title}}</h1>
 
     <h2>News Sources</h2>
-
-    <p>{{get_sources_response}}</p>
-
-    <!-- <ul>
-      {% for source in sources_results %}
+    <ul>
+      {% for source in sources %}
         <li>
-          {{ source.name}}
-          {{ source.category}}
-          {{ source.country}}
+          {{ sources.id}}<br>
+          {{ source.name}}<br>
+          {{ source.description}}<br>
+          {{ source.url}}<br>
+          {{ source.category}}<br>
+          {{ source.language}}<br>
+          {{ source.country}}<br>
         </li>
       {% endfor %}
-    </ul> -->
+    </ul>
 
-  </body>
+
+{% endblock %}

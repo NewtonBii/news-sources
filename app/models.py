@@ -1,11 +1,13 @@
 class Sources:
     """Sources class to define the news source object"""
 
-    def __init__(self, name, description, link, category, country):
+    def __init__(self, id, name, description, url, category, language, country):
+        self.id = id
         self.name = name
         self.description = description
-        self.link = 'Go to page' + link
+        self.url = url
         self.category = category
+        self.language = language
         self.country = country
 
 
