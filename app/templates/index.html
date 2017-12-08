@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html'%}
+
   <head>
     <meta charset="utf-8">
     <title>NEWS HIGHLIGHTS</title>
@@ -9,15 +9,16 @@
 
     <h2>News Sources</h2>
 
-    <ul>
-      {% for source in sources %}
+    <p>{{get_sources_response}}</p>
+
+    <!-- <ul>
+      {% for source in sources_results %}
         <li>
           {{ source.name}}
           {{ source.category}}
           {{ source.country}}
         </li>
       {% endfor %}
-    </ul>
+    </ul> -->
 
   </body>
-</html>
