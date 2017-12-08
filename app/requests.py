@@ -18,7 +18,6 @@ def get_sources(source):
     """Function to retrieve news sources list from the News api"""
 
     get_sources_url = 'https://newsapi.org/v1/sources'.format(source, api_key)
-    # get_sources_url = 'https://newsapi.org/v2/sources?apiKey=739aea22d2814f919546af28438d1048'
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()
         get_sources_response = json.loads(get_sources_data)
@@ -58,7 +57,9 @@ def process_results(sources_list):
 def get_articles_top(article):
     """Function to retrieve top news  list from the News api"""
 
-    get_articles_url = 'https://newsapi.org/v1/top-headlines'.format(article, api_key)
+    get_articles_url = 'https://newsapi.org/v1/top-headlines?source={}&apiKey={}'.format(
+        id, api_key)
+    # get_articles_url = 'https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=739aea22d2814f919546af28438d1048'
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
         get_articles_response = json.loads(get_articles_data)
@@ -81,7 +82,7 @@ def process_articles_results(articles_list):
 
     articles_results = []
     for article_item in articles_list:
-        author = artcle_item.get('author')
+        author = article_item.get('author')
         title = article_item.get('title')
         description = article_item.get('description')
         urlToImage = article_item.get('urlToImage')
