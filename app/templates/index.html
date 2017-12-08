@@ -7,5 +7,17 @@
   <body>
     <h1>News Highlights</h1>
 
+    <h2>News Sources</h2>
+
+    <ul>
+      {% for source in sources %}
+        <li>
+          {{ source.name}}
+          {{ source.category}}
+          {{ source.country}}
+        </li>
+      {% endfor %}
+    </ul>
+
   </body>
 </html>
