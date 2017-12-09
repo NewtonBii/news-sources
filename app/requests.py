@@ -54,12 +54,11 @@ def process_results(sources_list):
     return sources_results
 
 
-def get_articles_top(article):
+def get_articles(article):
     """Function to retrieve top news  list from the News api"""
 
-    get_articles_url = 'https://newsapi.org/v1/top-headlines?source={}&apiKey={}'.format(
-        id, api_key)
-    # get_articles_url = 'https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=739aea22d2814f919546af28438d1048'
+    get_articles_url = 'https://newsapi.org/v1/sources'.format(
+        article, api_key)
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
         get_articles_response = json.loads(get_articles_data)
