@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect, url_for
 from . import main
-from ..requests import get_sources, get_articles
+from ..requests import get_sources, get_articles_general
 
 
 @main.route('/')
@@ -12,8 +12,8 @@ def index():
     return render_template('index.html', title=title, sources=news_sources)
 
 
-@main.route('/top_stories/<id>')
-def top_stories(top_stories):
+@main.route('/news/<category>')
+def general(category):
     """View for top story articles"""
-    article_sources = get_articles_top('id')
-    return render_template('top_stories.html', articles=article_sources)
+    general_articles = get_articles_general('articles')
+    return render_template('general.html', articles=general_articles)
