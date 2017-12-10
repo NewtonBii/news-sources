@@ -16,4 +16,5 @@ def index():
 def source(id):
     """View for top story articles"""
     articles = get_articles('articles')
+    id = get_articles(id)
     return render_template('articles.html', articles=articles)

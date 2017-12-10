@@ -57,8 +57,9 @@ def process_results(sources_list):
 def get_articles(id):
     """Function to retrieve news sources list from the News api"""
 
-    # get_articles_url = 'https://newsapi.org/v1/articles?source={}?apiKey={}'.format(id, api_key)
-    get_articles_url = 'https://newsapi.org/v2/everything?sources={}&apiKey={}&language=en'.format(
+    # get_articles_url = 'https://newsapi.org/v1/articles?source={}&apiKey={}'.format(
+    # id, api_key)
+    get_articles_url = 'https://newsapi.org/v2/everything?sources={}&apiKey={}'.format(
         id, api_key)
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
@@ -69,7 +70,6 @@ def get_articles(id):
         if get_articles_response['articles']:
             articles_results_list = get_articles_response['articles']
             articles_results = process_articles_results(articles_results_list)
-
     return articles_results
 
 
@@ -91,5 +91,5 @@ def process_articles_results(articles_list):
 
         article_object = Articles(author, title, description, urlToImage, url, date)
         articles_results.append(article_object)
-
+    print(articles_results)
     return articles_results

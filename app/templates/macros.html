@@ -17,8 +17,9 @@
           <div class="col-sm-6">
             <div class="well" style="height:200px">
               <img src="{{article.urlToImage}}"alt="IMAGE NOT FOUND" style="width:150px;height:150px; float:left">
+              <h3>Author: {{article.author}}</h3>
               <a href="{{article.url}}">
-                <h3 style="font-weight:bold;margin-left:50px">{{ article.title|truncate(100)}}</h3>
+                <h4 style="font-weight:bold;margin-left:50px">{{ article.title|truncate(100)}}</h4>
               </a>
               <br>
               <footer>Published: {{article.date}}</footer>
