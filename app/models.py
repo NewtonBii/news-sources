@@ -14,9 +14,10 @@ class Sources:
 class Articles:
     """Articles class to define the articles object"""
 
-    def __init__(self, author, title, description, urlToImage, url):
+    def __init__(self, author, title, description, urlToImage, url, date):
         self.author = author
         self.title = title
         self.description = description
         self.urlToImage = urlToImage
         self.url = url
+        self.date = date

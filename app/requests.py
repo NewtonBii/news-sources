@@ -54,11 +54,12 @@ def process_results(sources_list):
     return sources_results
 
 
-def get_articles_general(article):
+def get_articles(id):
     """Function to retrieve news sources list from the News api"""
 
-    # get_sources_url = 'https://newsapi.org/v1/sources'.format(source, api_key)
-    get_articles_url = 'https://newsapi.org/v2/top-headlines?category=general&apiKey=739aea22d2814f919546af28438d1048'
+    # get_articles_url = 'https://newsapi.org/v1/articles?source={}?apiKey={}'.format(id, api_key)
+    get_articles_url = 'https://newsapi.org/v2/everything?sources={}&apiKey={}&language=en'.format(
+        id, api_key)
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
         get_articles_response = json.loads(get_articles_data)
@@ -67,27 +68,28 @@ def get_articles_general(article):
 
         if get_articles_response['articles']:
             articles_results_list = get_articles_response['articles']
-            articles_results = process_articles(articles_results_list)
+            articles_results = process_articles_results(articles_results_list)
 
     return articles_results
 
 
-# def process_articles_results(articles_list):
-#     """Function that process the results list and transforms them into a list of objects
-#     Args: articles_list: A list of dictionaries that contains news articles and links
-#
-#     Returns:
-#     articles_results: a list of news articles objects"""
-#
-#     articles_results = []
-#     for article_item in articles_list:
-#         author = article_item.get('author')
-#         title = article_item.get('title')
-#         description = article_item.get('description')
-#         urlToImage = article_item.get('urlToImage')
-#         url = article_item.get('url')
-#
-#         article_object = Articles(author, title, description, urlToImage, url)
-#         articles_results.append(article_object)
-#
-#     return articles_results
+def process_articles_results(articles_list):
+    """Function that process the results list and transforms them into a list of objects
+    Args: articles_list: A list of dictionaries that contains news articles and links
+
+    Returns:
+    articles_results: a list of news articles objects"""
+
+    articles_results = []
+    for article_item in articles_list:
+        author = article_item.get('author')
+        title = article_item.get('title')
+        description = article_item.get('description')
+        urlToImage = article_item.get('urlToImage')
+        url = article_item.get('url')
+        date = article_item.get('publishedAt')
+
+        article_object = Articles(author, title, description, urlToImage, url, date)
+        articles_results.append(article_object)
+
+    return articles_results

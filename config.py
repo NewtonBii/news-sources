@@ -4,8 +4,8 @@ import os
 class Config:
     """Main configurations class"""
 
-    NEWS_API_KEY = '739aea22d2814f919546af28438d1048'
-    NEWS_API_BASE_URL = 'https://newsapi.org/v2/sources/{}?apiKey{}'
+    NEWS_API_KEY = '47048b08e1bb49c194df8909a510c75d'
+    # NEWS_API_BASE_URL = 'https://newsapi.org/v2/sources/{}?apiKey{}'
 
 
 class ProdConfig(Config):

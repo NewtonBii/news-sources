@@ -1,7 +1,7 @@
 {% macro displaySourcesList(sources) %}
         {% for source in sources %}
           <div class="col-sm-4">
-            <a href="{{source.url}}">
+            <a href="/articles/{{source.id}}">
               <h3 style="font-weight:bold">{{ source.name}}</h3>
             </a>
             <br>
@@ -12,18 +12,17 @@
         {% endfor %}
 {% endmacro %}
 
-{% macro displayGeneralArticles(articles) %}
+{% macro displayArticles(articles) %}
         {% for article in articles %}
-          <div class="col-sm-4">
-            <img src="article.urlToImage" alt="Image">
-            <a href="{{article.url}}">
-              <h3 style="font-weight:bold">{{ article.title}}</h3>
-            </a>
-            <br>
+          <div class="col-sm-6">
             <div class="well" style="height:200px">
-                <p style="font-weight:bold">{{ article.description|truncate(200)}}</p>
+              <img src="{{article.urlToImage}}"alt="IMAGE NOT FOUND" style="width:150px;height:150px; float:left">
+              <a href="{{article.url}}">
+                <h3 style="font-weight:bold;margin-left:50px">{{ article.title|truncate(100)}}</h3>
+              </a>
+              <br>
+              <footer>Published: {{article.date}}</footer>
             </div>
           </div>
-
         {% endfor %}
 {% endmacro %}
