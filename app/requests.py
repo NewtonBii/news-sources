@@ -40,7 +40,7 @@ def process_results(sources_list):
 
     sources_results = []
     for source_item in sources_list:
-        id = source_item.get('id')
+        source_id = source_item.get('id')
         name = source_item.get('name')
         description = source_item.get('description')
         url = source_item.get('url')
@@ -48,19 +48,18 @@ def process_results(sources_list):
         language = source_item.get('language')
         country = source_item.get('country')
 
-        source_object = Sources(id, name, description, url, category, language, country)
+        source_object = Sources(source_id, name, description, url, category, language, country)
         sources_results.append(source_object)
 
     return sources_results
 
 
-def get_articles(id):
+def get_articles(source):
     """Function to retrieve news sources list from the News api"""
 
-    # get_articles_url = 'https://newsapi.org/v1/articles?source={}&apiKey={}'.format(
-    # id, api_key)
-    get_articles_url = 'https://newsapi.org/v2/everything?sources={}&apiKey={}'.format(
-        id, api_key)
+    # get_articles_url = 'https://newsapi.org/v2/everything?sources={}&apiKey={}'.format(
+    #     source_id, api_key)
+    get_articles_url = 'https://newsapi.org/v1/articles?source={}&apiKey={}'.format(source, api_key)
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
         get_articles_response = json.loads(get_articles_data)
@@ -82,6 +81,7 @@ def process_articles_results(articles_list):
 
     articles_results = []
     for article_item in articles_list:
+        source_id = article_item.get('id')
         author = article_item.get('author')
         title = article_item.get('title')
         description = article_item.get('description')
@@ -89,7 +89,6 @@ def process_articles_results(articles_list):
         url = article_item.get('url')
         date = article_item.get('publishedAt')
 
-        article_object = Articles(author, title, description, urlToImage, url, date)
+        article_object = Articles(source_id, author, title, description, urlToImage, url, date)
         articles_results.append(article_object)
-    print(articles_results)
     return articles_results

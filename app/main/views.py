@@ -9,12 +9,12 @@ def index():
     title = 'Home- Welcome to the best News source page'
     # Getting the news sources
     news_sources = get_sources('sources')
-    return render_template('index.html', title=title, sources=news_sources)
+    return render_template('index.html', title=title, news_sources=news_sources)
 
 
-@main.route('/articles/<id>')
-def source(id):
+@main.route('/articles/<source_id>')
+def source(source_id):
     """View for top story articles"""
-    articles = get_articles('articles')
-    id = get_articles(id)
-    return render_template('articles.html', articles=articles)
+    # articles = get_articles('articles')
+    source_and_articles = get_articles(source_id)
+    return render_template('articles.html', source_and_articles=source_and_articles)
