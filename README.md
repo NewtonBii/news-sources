@@ -17,6 +17,7 @@ This is an app that users can view various international news sources and select
 ## Source Code and development.
 * Clone [NEWS-SOURCES](https://github.com/NewtonBii/news-sources).
 * Ensure you have python installed.
+* Ensure you have an API key from [NEWS API](https://newsapi.org/) to be able to make requests.
 * In the cloned project, inside the root directory, create a directory and name it virtual.
 * From the terminal run **python3.6 -m venv virtual** to create a virtual environment.
 * Switch to the virtual environment by entering  ***source virtual/bin/activate*** from the terminal.
