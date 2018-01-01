@@ -1,6 +1,6 @@
 # NEWS-SOURCES
 This is a web app that displays a list of all news sources. Built with flask framework and uses a News API
-## Built by  ```[Newton Bii]```(https://github.com/NewtonBii)
+## Built by  [Newton Bii](https://github.com/NewtonBii)
 
 ## Description
 This is an app that users can view various international news sources and select one. They can also read all the articles from a particular news source they select.
@@ -12,10 +12,10 @@ This is an app that users can view various international news sources and select
 * A user can read that particular news item from the source directly.
 
 ## SetUp / Installation Requirements
-* Launch the app directly from ```[News Room](https://newton-news-highlights.herokuapp.com/)```.
+* Launch the app directly from [News Room](https://newton-news-highlights.herokuapp.com/).
 
 ## Source Code and development.
-* Clone ```[NEWS-SOURCES](https://github.com/NewtonBii/news-sources)```.
+* Clone [NEWS-SOURCES](https://github.com/NewtonBii/news-sources).
 * Ensure you have python installed.
 * Ensure you have an API key from [NEWS API](https://newsapi.org/) to be able to make requests.
 * In the cloned project, inside the root directory, create a directory and name it virtual.
