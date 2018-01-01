@@ -1,6 +1,6 @@
 # NEWS-SOURCES
 This is a web app that displays a list of all news sources. Built with flask framework and uses a News API
-## Built by  ```[Newton Bii](https://github.com/NewtonBii)```
+## Built by  ```[Newton Bii]```(https://github.com/NewtonBii)
 
 ## Description
 This is an app that users can view various international news sources and select one. They can also read all the articles from a particular news source they select.
