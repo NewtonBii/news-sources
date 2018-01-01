@@ -1,6 +1,6 @@
 # NEWS-SOURCES
 This is a web app that displays a list of all news sources. Built with flask framework and uses a News API
-## Built by  [Newton Bii](https://github.com/NewtonBii)
+## Built by  ```[Newton Bii](https://github.com/NewtonBii)```
 
 ## Description
 This is an app that users can view various international news sources and select one. They can also read all the articles from a particular news source they select.
@@ -12,23 +12,23 @@ This is an app that users can view various international news sources and select
 * A user can read that particular news item from the source directly.
 
 ## SetUp / Installation Requirements
-* To use the app go to [News Room](https://newton-news-highlights.herokuapp.com/) and use it.
+* Launch the app directly from ```[News Room](https://newton-news-highlights.herokuapp.com/)```.
 
 ## Source Code and development.
-* Clone [NEWS-SOURCES](https://github.com/NewtonBii/news-sources).
+* Clone ```[NEWS-SOURCES](https://github.com/NewtonBii/news-sources)```.
 * Ensure you have python installed.
 * Ensure you have an API key from [NEWS API](https://newsapi.org/) to be able to make requests.
 * In the cloned project, inside the root directory, create a directory and name it virtual.
-* From the terminal run **python3.6 -m venv virtual** to create a virtual environment.
-* Switch to the virtual environment by entering  ***source virtual/bin/activate*** from the terminal.
-* Run python manage.py server and open ***Localhost:5000*** in your browser to view the app.
+* From the terminal run ```python3.6 -m venv virtual``` to create a virtual environment.
+* Switch to the virtual environment by entering  ```source virtual/bin/activate``` from the terminal.
+* Run python manage.py server and open ```localhost:5000``` in your browser to view the app.
 * Now you can play around with the code and see the changes in the browser.
 
 
 ## Technologies Used
-* Python3.6
-* Flask
-* News API
+* ```Python3.6```
+* ```Flask```
+* ```News API```
 
 ## License
 MIT &copy;2017 **[Newton Bii](https://github.com/NewtonBii)** 
